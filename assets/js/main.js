@@ -3,7 +3,6 @@
 (function () {
   "use strict";
 
-  // Header scroll state
   const header = document.querySelector(".header");
   if (header) {
     const onScroll = () => {
@@ -13,7 +12,6 @@
     onScroll();
   }
 
-  // Mobile menu
   const toggle = document.querySelector(".menu-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
   if (toggle && mobileMenu) {
@@ -22,7 +20,6 @@
       toggle.setAttribute("aria-expanded", isOpen);
       document.body.style.overflow = isOpen ? "hidden" : "";
     });
-
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.remove("open");
@@ -32,7 +29,6 @@
     });
   }
 
-  // FAQ accordion
   document.querySelectorAll(".faq-question").forEach((btn) => {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
@@ -42,7 +38,6 @@
     });
   });
 
-  // Smooth offset for fixed header anchors
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const id = anchor.getAttribute("href");
